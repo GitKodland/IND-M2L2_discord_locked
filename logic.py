@@ -66,7 +66,7 @@ class Pokemon:
             return f"Pertempuran @{self.pokemon_trainer} dengan @{enemy.pokemon_trainer}\nKesehatan @{enemy.pokemon_trainer} sekarang {enemy.hp}"
         else:
             enemy.hp = 0
-            return f"Menang @{self.pokemon_trainer} over @{enemy.pokemon_trainer}!"
+            return f"@{self.pokemon_trainer} menang dari @{enemy.pokemon_trainer}!"
 
 
 class Wizard(Pokemon):
@@ -80,7 +80,7 @@ class Fighter(Pokemon):
         self.power += super_power
         result = await super().attack(enemy)
         self.power -= super_power
-        return result + f"\nFighter used super-attack power:{super_power}"
+        return result + f"\nPokemon petarung menggunakan kekuatan serangan super:{super_power}"
     
     async def feed(self):
         return await super().feed(feed_interval=10)
